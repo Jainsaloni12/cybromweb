@@ -1,0 +1,103 @@
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+<br><br>
+<style>
+    .contact1{
+        margin-left: 550px;
+        font-size: 20px;
+        margin-top: 40px;
+        color: rgb(38, 38, 188);
+       
+    }
+
+    .contact2{
+        margin-left: 530px;
+        font-size: 30px;
+    }
+    input{
+        font-size: 30px;
+        border-radius: 10px;
+        height: 35px;
+    }
+    textarea{
+        border-radius: 10px;
+        width: 310px;
+    }
+    #formsubmit{
+        font-size: 30px;
+        margin-left: 520px;
+    }
+    #courses{
+        width: 25%;
+        text-align: center;
+    }
+    #course{
+        width:35%;
+        height: 60px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 30px;
+        background-color:  rgb(38, 38, 188);
+        color: white;
+        margin-left: 95px;
+        
+    }
+   
+</style>
+<div class="contact1">
+    <h2>Enrollment table</h2>
+    <table border="10px">
+        <tr>
+        <th>course</th>
+        <th>want to remove</th>
+        </tr>
+        {% for i in course %}
+        <tr>
+            <td>{{i}}</td>
+            <td><a href="{% url 'remove' i %}">remove it</a></td>
+            {% endfor %}
+            
+        </tr>
+    </table>
+    <form action="{% url 'final' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">final submit</button>
+    </form>
+</div>
+<div>
+
+{% if user1 %}
+
+                Welcome  {{current_user}}
+            
+                {% endif %}
+            </div>
+
+
+
+{% if msg %}
+<div id="formsubmit">Your Form Submitted Successfully </div>
+{% endif %}
+
+    <div class="contact1">
+      <h1>Enrollment Table</h1>
+      <h4>Selected Courses :{{course}}</h4>
+
+    </div><br><br>
+    <div class="contact2">
+        <form action="{% url 'enrollmore' %}" method="post">
+            {% csrf_token %}
+            <label for="courses">Choose Courses:</label>
+
+        <select name="ch" id="courses">
+            {% for i in data %}
+            <option value="{{i.name}}">{{i.name}}</option>
+            {% endfor %}
+        </select><br>
+         <button type="submit" id="course">Want To Add More</button>
+            
+        </form>
+    </div><br><br>
+
+{% endblock one %}

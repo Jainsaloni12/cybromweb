@@ -1,0 +1,27 @@
+{% extends 'application/index.html' %}
+{% load static %}
+
+{% block one %}
+    <!-- section 2 -->
+<section>
+    <h4 class="about"><i class="fa fa-clone" aria-hidden="true"></i><a href="">About Us</a></h4>
+    <div id="ab">
+        {% for f in fm %}
+        <h2 class="career">{{f.heading}}<br>____ .</h2>
+        <h5 class="career1">{{f.desc}}</h5>
+        <div class="award"><h5><i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{f.quality}}</h5><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{f.quality2}}</h5></div>
+        <div class="award"><h5><i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{f.quality1}}</h5><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check" aria-hidden="true"></i>&nbsp;{{f.quality3}}</h5></div>
+        <button class="read"><a href="">Read more</a></button>
+        <div class="icon"> 
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        </div>          
+    </div>
+    <div class="img2"><img src="{{ f.image.url }}" width="500px" height="400px"></div>  
+    {% endfor %}
+</section>
+<br><br>
+{% endblock one %}
+

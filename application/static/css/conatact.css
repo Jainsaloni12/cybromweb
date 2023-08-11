@@ -1,0 +1,70 @@
+.main-div
+{
+    background-color: #fff;
+}
+#wrapper
+{
+    background-color: rgb(90, 196, 196);
+    width: 500px;
+    height: 700px;
+    margin: auto;
+}
+.heading-1
+{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+}
+.form-div
+{
+    text-align: center;
+}
+.form-div form input
+{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+.form-div form textarea
+{
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+}
+.form-div form button
+{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+}
+.div1
+{
+    background-color: rgb(180, 14, 42);
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: auto;
+}
+.div2
+{
+    background-color: aqua;
+    width: 400px;
+    height: 400px;
+    /* float: left; */
+
+}
+#a
+{
+    width: 200px;
+}
+.prof
+{
+    width: 300px;
+    border-radius: 20px;
+    height: 250px;
+    background-color: rgb(38, 38, 188);
+    margin-left: 30px;
+    border: 1px solid white;
+
+}

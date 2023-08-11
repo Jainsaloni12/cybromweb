@@ -1,0 +1,67 @@
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+    <!-- 4th section -->
+    <section>
+        <div class="service" id="service">
+            <i class="fa fa-copy" aria-hidden="true"></i><h4>Our Services</h4>
+            
+        </div>
+        <h1 class="what">What Solutions We Provide<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ___.</h1>
+
+    <div class="row">
+        {% for i in data %}
+        <div class="col-4">
+            <div class="sixbox">
+                <div class="box">
+                    <center><img src="{{ i.image.url }}" alt="" srcset="" width="200px" height="100px" style="border-radius: 35px;">
+                    <h2>{{i.name}}</h2>
+                    <p>{{i.desc}}</p>
+                    <h2>{{i.duration}}</h2> 
+                    <a href="{% url 'desc' i.id %}"><button>Read More</button></a></center>
+                </div>
+            </div>
+        </div>  
+        {% endfor %}
+    </div>
+</section>
+<!--           <div class="box">
+                <i class="fa fa-house" aria-hidden="true"></i>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Design</h2>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                <button>Read More</button>
+            </div>
+    
+            <div class="box">
+                <i class="fa fa-house" aria-hidden="true"></i>
+                <h2>Social Media Marketing</h2>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                <button>Read More</button>
+            </div>
+            </div><br><br><br>
+        <div class="sixbox">
+            <div class="box">
+                <i class="fa fa-house" aria-hidden="true"></i>
+                <h2>Email Marketing</h2>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                <button>Read More</button>
+            </div>
+            <div class="box">
+                <i class="fa fa-house" aria-hidden="true"></i>
+                <h2>PPC Advertising</h2>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                <button>Read More</button>
+            </div>
+            <div class="box">
+                <i class="fa fa-house" aria-hidden="true"></i>
+                <h2>App Development</h2>
+                <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                <button>Read More</button>
+            </div>
+        
+           
+        </div>
+    </section>-->
+
+{% endblock one %}

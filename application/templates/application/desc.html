@@ -1,0 +1,22 @@
+
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+
+<div class="col-4">
+    <div class="sixbox">
+        <div class="box">
+            <center><img src="{{ i.image.url }}" alt="" srcset="" width="200px" height="100px" style="border-radius: 35px;">
+            <h2>{{i.name}}</h2>
+            <p>{{i.desc}}</p>
+            <h2>{{i.duration}}</h2>  
+        </div>
+    </div>
+</div> 
+
+<h2>{{i2.name}}</h2>
+<p>{{i2.full_desc}}</p>
+<h2>{{i2.fees}}</h2>
+
+
+{% endblock %}

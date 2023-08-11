@@ -1,0 +1,21 @@
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+
+
+
+
+
+<form action="{% url 'login' %}" method="post">
+
+    {% csrf_token %}
+
+{% for i in fm %}
+
+{{i.label_tag}}{{i}}{{i.errors|striptags}} <br><br>
+
+{% endfor %}
+<input type="submit" value="login">
+</form>
+
+{% endblock one %}

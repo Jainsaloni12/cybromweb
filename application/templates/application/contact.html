@@ -1,0 +1,30 @@
+
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+<div class="main-div">
+    <div id="wrapper">
+        <div class="heading-1">
+            <h2>Contact Us</h2>
+            <h3>For Any Query___.</h3>
+        </div><br>
+
+        <div class="form-div">
+            <form action="{% url 'contactus' %}" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Name" name="sn"><br><br>
+                <input type="text" placeholder="Email" name="se"><br><br>
+                <input type="text" placeholder="Mobile Number" name="sm"><br><br>
+                <textarea name="Message" id="" cols="30" rows="10" placeholder="Query"></textarea><br><br>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    {% if msg %}
+
+<div>Form Submitted Successfully</div>
+    {% endif %}
+{% endblock one %}

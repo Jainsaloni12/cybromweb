@@ -1,0 +1,60 @@
+
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+ <!-- 5th section  -->
+
+ <div class="showImage">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{form}}
+        <input type="submit" value="Upload">
+    </form>
+ </div>
+
+ 
+ <section class="fifth">
+    <div class="service" id="project">
+        <i class="fa fa-copy" aria-hidden="true"></i><h4>Our Projects</h4>
+    </div>
+    <h1 class="what">Recently Launched Projects</h1><br>
+ 
+<div class="sixbox2">
+    <div class="row">
+        {% for j in project %}
+            <div class="col-4">
+                <div class="box1"><img src="{{ j.image.url }}" width="300px" height="300px"  style="border-radius: 35px;"></div>
+            </div>
+        {% endfor %}
+
+    </section>
+     <!-- 6th section  -->
+    <section class="maincard3">
+        <div class="row">
+            {% for f in data %}
+            <div class="col-4">
+                <div class="prof">
+                    <p class="quote"><i class="fa-solid fa-quote-left"></i></p>
+                    <img src="{{ f.client_image.url }}" height="70px" width="70px" class="im1">
+                    <h4>{{f.client_name}}</h4>
+                    <p class="card5">{{f.desc}}</p>
+                    <h7>{{f.profession}}</h7>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+        
+
+<!-- 
+    </div>
+        <div class="box1"><img src="{% static 'image/portfolio-2.jpg' %}" width="390px" height="390px"></div>
+        <div class="box1"><img src="{% static 'image/portfolio-3.jpg' %}" width="390px" height="390px"></div>
+    </div>
+    <div class="sixbox2">
+        <div class="box1"><img src="{% static 'image/portfolio-4.jpg' %}" width="390px" height="390px"></div>
+        <div class="box1"><img src="{% static 'image/portfolio-5.jpg' %}" width="390px" height="390px"></div>
+        <div class="box1"><img src="{% static 'image/portfolio-5.jpg' %}" width="390px" height="390px"></div>
+    </div>
+</section> -->
+{% endblock one %}

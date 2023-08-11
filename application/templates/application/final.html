@@ -1,0 +1,61 @@
+{% extends 'application/index.html' %}
+{% load static %}
+{% block one %}
+<br><br>
+<style>
+    .contact1{
+        margin-left: 600px;
+        font-size: 20px;
+        margin-top: 40px;
+        color: blue;
+    }
+    .contact2{
+        margin-left: 530px;
+        font-size: 20px;
+
+    }
+    input{
+        font-size: 30px;
+        
+    }
+    textarea{
+        border-radius: 10px;
+        width: 310px;
+    }
+
+</style>
+
+<div class="contact1">
+    <h2>Contact Us</h2>
+    <h3>For Any query</h3>
+
+</div><br><br>
+<div class="contact2">
+    <form action="{% url 'contactus' %}" method="post">
+        {% csrf_token %}
+ <table border="10px">
+
+    <tr>
+        <th>Course</th>
+        <th>fees</th>
+
+    </tr>
+    {% for i,j in lis2 %}
+    <tr>
+        <td>{{i}}</td>
+        <td>{{j}}</td>
+        {% endfor %}
+
+    </tr>
+    
+ </table> 
+           <button type="submit">final submition</button>      
+    </form>
+</div>
+{% if msg %}
+
+<div>form Submitted Successfully</div>
+{% endif %}
+{% endblock one %}
+</body>
+</html>
